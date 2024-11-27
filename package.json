@@ -1,0 +1,26 @@
+{
+  "name": "cucumber-playwright-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js --require features/steps --require features/support/hooks.js --require features/support/world.js --format json:reports/cucumber-report.json && node features/scripts/generateReport.js",
+    "test-headfull": "HEADLESS=false npm test",
+    "report": "node features/scripts/generateReport.js",
+    "test:report": "npm run test && npm run report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cucumber/cucumber": "^11.1.0",
+    "@playwright/test": "^1.49.0",
+    "chai": "^4.3.7"
+  },
+  "devDependencies": {
+    "cucumber-html-reporter": "^7.2.0",
+    "eslint": "^9.15.0",
+    "multiple-cucumber-html-reporter": "^3.8.0",
+    "prettier": "^3.3.3"
+  }
+}
