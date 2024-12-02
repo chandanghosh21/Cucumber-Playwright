@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js --require features/steps --require features/support/hooks.js --require features/support/world.js --format json:reports/cucumber-report.json && node features/scripts/generateReport.js",
+    "test": "cucumber-js --require features/steps --require features/support/hooks.js --require features/support/world.js --tags ${TAGS} --format json:reports/cucumber-report.json && node features/scripts/generateReport.js",
     "test-headfull": "HEADLESS=false npm test",
+    "test-only": "cucumber-js -t",
     "report": "node features/scripts/generateReport.js",
     "test:report": "npm run test && npm run report"
   },
